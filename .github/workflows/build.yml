@@ -69,6 +69,12 @@ jobs:
           brew update
           brew install google-chrome
 
+      - name: Install macOS SDK
+        run: |
+          xcode-select --print-path
+          xcrun --show-sdk-version
+          ls -l /Library/Developer/CommandLineTools/SDKs/
+
       - name: Test
         run: |
           ./gradlew -p wire-library build
